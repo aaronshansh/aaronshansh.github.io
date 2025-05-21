@@ -52,7 +52,8 @@ The website is compatible with modern browsers:
 
 - Font Awesome for icons
 - Google Fonts for Poppins and Montserrat fonts
-- Original design by Aaron Shan
+- Designed by Mario Miao
+- Images & original content by Aaron Shan
 
 ---
 
