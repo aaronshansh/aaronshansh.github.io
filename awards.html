@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Shan | Awards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Awards Page Specific Styles */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .award-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .award-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .award-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .award-card:hover .award-image img {
+            transform: scale(1.05);
+        }
+        
+        .award-details {
+            padding: 20px;
+        }
+        
+        .award-details h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+        
+        .award-details p {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .award-meta {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .award-meta i {
+            margin-right: 5px;
+            color: var(--color-primary);
+        }
+        
+        .award-meta span {
+            margin-right: 15px;
+        }
+        
+        .awards-hero {
+            background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.8), rgba(var(--color-secondary-rgb), 0.8)), url('images/awards-hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .awards-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .awards-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .awards-hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .awards-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>Aaron</span> Portfolio
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#resume">Resume</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="awards.html" class="active">Awards</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Awards Hero Section -->
+    <section class="awards-hero">
+        <div class="container">
+            <h1>My Awards & Achievements</h1>
+            <p>A collection of recognitions and accomplishments that represent my journey, dedication, and growth.</p>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards">
+        <div class="container">
+            <div class="section-title">
+                <span class="subtitle">Recognition</span>
+                <h2>Awards & Badges</h2>
+            </div>
+            
+            <div class="awards-grid">
+                <!-- Award 1 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-debate1.jpg" alt="Top 10% Speaker Award" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Top 10% Speaker</h3>
+                        <p>Top 10% Speaker in FDT Fall Tournament</p>
+                        <div class="award-meta">
+                            <i class="fas fa-trophy"></i>
+                            <span>Debate</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Fall Tournament</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 2 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-kayak1.jpg" alt="Kayak Award 3rd BC" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Kayak Award - 3rd Place BC</h3>
+                        <p>Date: BC Cup 3<br>
+                        Class: U12 M K2 200M<br>
+                        Won By: Aaron Shan<br>
+                        Judge: BCKE<br>
+                        Time: 1:01.598</p>
+                        <div class="award-meta">
+                            <i class="fas fa-medal"></i>
+                            <span>Kayaking</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>BC Cup 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 3 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-debate2.jpg" alt="FDT Champion Team" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>FDT Champion Team</h3>
+                        <p>#1 Team Top 1% for FDT Debate Fall Tournament</p>
+                        <div class="award-meta">
+                            <i class="fas fa-trophy"></i>
+                            <span>Debate</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Fall Tournament</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 4 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-swim1.jpg" alt="Swimming Award 1st (Club)" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Swimming Award - 1st Place (Club)</h3>
+                        <p>Name: Aaron Shan<br>
+                        Dynamo Annual 2023<br>
+                        Male, 9-12 Category<br>
+                        50 Breaststroke 57.7</p>
+                        <div class="award-meta">
+                            <i class="fas fa-trophy"></i>
+                            <span>Swimming</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 5 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-debate3.jpg" alt="FDT Debate Award" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>FDT Debate Award</h3>
+                        <p>My first Debate awards 2024, (Not Official Contest). This was after I finished my Credit Course for Debate GR 10 Level in Grade 8.</p>
+                        <div class="award-meta">
+                            <i class="fas fa-award"></i>
+                            <span>Debate</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 6 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-public-speaking.jpg" alt="Public Speaking Award" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Canada International Youth Public Speaking</h3>
+                        <p>Outstanding Potential on 2022 The 6th Canada International Youth Public Speaking & Debate Tournament</p>
+                        <div class="award-meta">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Public Speaking</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2022</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 7 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-debate4.jpg" alt="FDT Debate Course" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>FDT Debate Course GR.10</h3>
+                        <p>Finished with a 90% (A) during Grade 8.</p>
+                        <div class="award-meta">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Academic</span>
+                            <i class="fas fa-star"></i>
+                            <span>Grade A (90%)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 8 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-swim2.jpg" alt="Swimming Award BC" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Swimming Award - BC</h3>
+                        <p>Place: 7th Time: 4:03.06<br>
+                        #58 Boys 10&U 200 Meter Medley Relay<br> 
+                        Aaron Shan 12 leg 4 (46.32)<br> 
+                        Dynamo Swim Club -A 10/29/2023</p>
+                        <p>Place: 7th Time: 3:43.98<br>
+                        #24 Boys 1-&U 200 Meter Free Relay Race<br>
+                        Aaron Shan 12 leg 4 (1:09.80)<br>
+                        Dynamo Swim Club -A 10/28/2023</p>
+                        <div class="award-meta">
+                            <i class="fas fa-swimming-pool"></i>
+                            <span>Swimming</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 9 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-swim3.jpg" alt="Bronze Medallion" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Bronze Medallion</h3>
+                        <p>Swimming Badge certification for lifesaving skills</p>
+                        <div class="award-meta">
+                            <i class="fas fa-medal"></i>
+                            <span>Swimming</span>
+                            <i class="fas fa-life-ring"></i>
+                            <span>Lifesaving</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Award 10 -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="images/award-kayak2.jpg" alt="Kayak Award 2nd BC" width="443" height="590">
+                    </div>
+                    <div class="award-details">
+                        <h3>Kayak Award - 2nd Place BC</h3>
+                        <p>Date: BC Cup 3<br>
+                        Class: U12 M K4 200M<br>
+                        Won By: Aaron Shan<br>
+                        Judge: BCKC<br>
+                        Time: 59.310</p>
+                        <div class="award-meta">
+                            <i class="fas fa-medal"></i>
+                            <span>Kayaking</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>BC Cup 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>Aaron</span> Portfolio
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#resume">Resume</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="awards.html">Awards</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.snapchat.com/add/aaron.shan" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-snapchat"></i></a>
+                    <a href="https://www.instagram.com/aaronshansh/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Aaron Shan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
