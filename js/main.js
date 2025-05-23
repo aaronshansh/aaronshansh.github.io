@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollReveal();
     initProjectFilters();
     initContactForm();
+    
+    updateActiveNavLink(); // Set initial active link on page load
 });
 
 // Sticky Header
@@ -237,29 +239,79 @@ function initContactForm() {
     }
 }
 
-// Active navigation menu based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
+// Function to update active navigation link
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]'); // Ensure sections have an ID
     const navLinks = document.querySelectorAll('nav ul li a');
-    
-    let current = '';
-    
+    const pathName = window.location.pathname;
+    const currentPageFile = pathName.substring(pathName.lastIndexOf('/') + 1) || 'index.html';
+    let currentSectionId = '';
+    const headerOffset = 150; // Adjust this offset as needed (e.g., header height)
+
+    // Determine current section for hash links
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= sectionTop - 300) {
-            current = section.getAttribute('id');
+        if (pageYOffset >= sectionTop - headerOffset && pageYOffset < sectionTop + sectionHeight - headerOffset) {
+            currentSectionId = section.getAttribute('id');
         }
     });
-    
+
+    // If on index.html and at the top, 'home' is the current section
+    if (currentPageFile === 'index.html' && pageYOffset < headerOffset) {
+        currentSectionId = 'home';
+    }
+
+    let hashLinkActivated = false;
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        link.classList.remove('active'); // Clear active from all links first
+        const linkHref = link.getAttribute('href');
+        if (!linkHref) return;
+
+        // Activate based on current section ID (for hash links like #about)
+        if (linkHref.startsWith('#') && linkHref.substring(1) === currentSectionId) {
             link.classList.add('active');
+            hashLinkActivated = true;
         }
     });
-});
+
+    // If no hash link was activated by scroll (e.g., on awards.html, or index.html but no section matched)
+    // Activate the link that matches the current page file.
+    if (!hashLinkActivated) {
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (!linkHref) return;
+
+            const linkFilePart = linkHref.split('#')[0]; // Get "awards.html" from "awards.html" or "index.html" from "index.html#about"
+            let linkFileName = linkFilePart.substring(linkFilePart.lastIndexOf('/') + 1);
+            if (linkFileName === '' && (linkFilePart === '/' || linkFilePart === './' || linkFilePart === 'index.html' || linkFilePart === '')) {
+                linkFileName = 'index.html';
+            }
+            
+            if (linkFileName === currentPageFile) {
+                 // For index.html, ensure it's the main "Home" link or #home section is active
+                if (currentPageFile === 'index.html') {
+                    if (currentSectionId === 'home' && (linkHref === '#home' || linkHref === 'index.html' || linkHref === './' || linkHref === '/')) {
+                        link.classList.add('active');
+                    } else if (linkHref === 'index.html' && currentSectionId !== 'home' && !document.querySelector('nav ul li a[href="#' + currentSectionId + '"].active')) {
+                        // Fallback for index.html if no specific section is active but we are on index page
+                        // This case might need refinement based on exact desired behavior for index.html's own link
+                    }
+                } else { // For other pages like awards.html
+                    link.classList.add('active');
+                }
+            }
+        });
+    }
+     // Final check for index.html home link if nothing else is active and at top
+    if (currentPageFile === 'index.html' && !document.querySelector('nav ul li a.active') && pageYOffset < headerOffset) {
+        const homeLink = document.querySelector('nav ul li a[href="#home"], nav ul li a[href="index.html"], nav ul li a[href="./"]');
+        if (homeLink) homeLink.classList.add('active');
+    }
+}
+
+// Active navigation menu based on scroll position
+window.addEventListener('scroll', updateActiveNavLink);
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -715,7 +715,7 @@ header.sticky .bar {
 
 /* ===== CONTACT ===== */
 .contact {
-    background-color: var(--color-grey-1);
+    background-color: var(--color-white);
 }
 
 .contact-content {
@@ -1176,4 +1176,23 @@ footer {
     .cursor, .cursor-follower {
         display: none;
     }
+}
+
+/* ===== AWARDS/BADGES SECTION ===== */
+.awards {
+    background-color: var(--color-grey-1);
+}
+
+.awards-content {
+    text-align: center; /* Center align content within awards section */
+}
+
+.awards-description p {
+    margin-bottom: 3rem; /* Add some space below the description */
+}
+
+.awards-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; /* Add margin above the button */
 } 
