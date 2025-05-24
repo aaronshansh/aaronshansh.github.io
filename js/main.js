@@ -129,10 +129,19 @@ function initTextTypeAnimation() {
     
     const elements = document.getElementsByClassName('txt-rotate');
     for (let i = 0; i < elements.length; i++) {
-        const toRotate = elements[i].getAttribute('data-rotate');
+        const toRotateAttr = elements[i].getAttribute('data-rotate');
         const period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        if (toRotateAttr) {
+            try {
+                const toRotateJSON = JSON.parse(toRotateAttr);
+                new TxtRotate(elements[i], toRotateJSON, period);
+            } catch (e) {
+                console.error("Error parsing data-rotate attribute for element:", elements[i]);
+                console.error("Attribute value was:", toRotateAttr);
+                console.error("Error details:", e);
+                // Optionally, you could set some default text or hide the element
+                // elements[i].innerHTML = 'Error loading animation.'; 
+            }
         }
     }
     
