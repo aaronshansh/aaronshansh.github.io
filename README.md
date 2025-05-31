@@ -1,4 +1,4 @@
-# Aaron Shanahan - Portfolio Website
+# Aaron Shan - Portfolio Website
 
 A modern, sleek portfolio website with interactive animations and a responsive design.
 
@@ -59,8 +59,10 @@ The website is compatible with modern browsers:
 
 - Font Awesome for icons
 - Google Fonts for Poppins and Montserrat fonts
-- Original design by Aaron Shanahan
+- Website coded by Mario Miao
+- Original design by Mario Miao
+- Original idea, media, assets by Aaron Shan
 
 ---
 
-© 2025 Aaron Shanahan. All Rights Reserved. 
+© 2025 Aaron Shan. All Rights Reserved. 
