@@ -86,6 +86,97 @@
         body.modal-open {
             overflow: hidden;
         }
+        
+        /* Phone Button Styles */
+        .phone-button {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .phone-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Notification Popup Styles */
+        .notification-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .notification-modal {
+            background-color: #fff;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: notificationFadeIn 0.3s ease;
+            position: relative;
+        }
+        
+        @keyframes notificationFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .notification-header {
+            padding: 15px 20px 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .close-notification {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+        
+        .close-notification:hover {
+            color: var(--color-primary);
+        }
+        
+        .notification-content {
+            padding: 0 20px 20px 20px;
+            text-align: center;
+        }
+        
+        .notification-content p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* Show notification when active */
+        .notification-container.active {
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -349,6 +440,18 @@
         </div>
     </div>
 
+    <!-- Phone Number Notification Popup -->
+    <div class="notification-container" id="phoneNotification">
+        <div class="notification-modal">
+            <div class="notification-header">
+                <span class="close-notification">&times;</span>
+            </div>
+            <div class="notification-content">
+                <p>No, don't even think about it...</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Awards/Badges Section -->
     <section id="awards" class="awards">
         <div class="container">
@@ -392,6 +495,15 @@
                         <div class="info">
                             <h3>Location</h3>
                             <p>Burnaby, BC</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info">
+                            <h3>Phone Number</h3>
+                            <button id="phoneButton" class="phone-button">Click Here</button>
                         </div>
                     </div>
                 </div>
@@ -470,6 +582,42 @@
                 const activeModal = document.querySelector('.modal-container.active');
                 if (activeModal) {
                     activeModal.classList.remove('active');
+                    document.body.classList.remove('modal-open');
+                }
+            }
+        });
+        
+        // Phone notification functionality
+        const phoneButton = document.getElementById('phoneButton');
+        const phoneNotification = document.getElementById('phoneNotification');
+        const closeNotification = document.querySelector('.close-notification');
+        
+        // Open notification when clicking phone button
+        phoneButton.addEventListener('click', () => {
+            phoneNotification.classList.add('active');
+            document.body.classList.add('modal-open');
+        });
+        
+        // Close notification when clicking close button
+        closeNotification.addEventListener('click', () => {
+            phoneNotification.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        });
+        
+        // Close notification when clicking outside
+        phoneNotification.addEventListener('click', (e) => {
+            if (e.target === phoneNotification) {
+                phoneNotification.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+        });
+        
+        // Close notification with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const activeNotification = document.querySelector('.notification-container.active');
+                if (activeNotification) {
+                    activeNotification.classList.remove('active');
                     document.body.classList.remove('modal-open');
                 }
             }
