@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaron Shan | Portfolio</title>
+    <meta
+      name="description"
+      content="Aaron Shan's portfolio: Grade 10 Rep, student, designer, developer, creator."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font Awesome kit (as requested) -->
+    <script
+      src="https://kit.fontawesome.com/208c66f94a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Ambient background -->
+    <div class="bg">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="grid-noise"></div>
+    </div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <span class="brand-mark"></span>
+        <span class="brand-text">Aaron Portfolio</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#projects">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Hello, I'm</p>
+            <h1 class="h1">
+              Aaron Shan
+            </h1>
+
+            <p class="lead">
+              <span class="muted">I’m a</span>
+              <span class="typewrap" aria-live="polite">
+                <span id="typewriter" class="typewriter"></span>
+                <span class="caret" aria-hidden="true"></span>
+              </span>
+            </p>
+
+            <p class="sublead">
+              Passionate about making the community better together.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">
+                <i class="fa-regular fa-paper-plane"></i>
+                Contact
+              </a>
+              <a class="btn btn-ghost" href="#projects">
+                <i class="fa-regular fa-folder-open"></i>
+                View Projects
+              </a>
+            </div>
+
+            <div class="mini-stats" aria-label="Quick highlights">
+              <div class="chip">
+                <i class="fa-solid fa-people-group"></i>
+                Grade 10 Rep
+              </div>
+              <div class="chip">
+                <i class="fa-solid fa-comments"></i>
+                Debate
+              </div>
+              <div class="chip">
+                <i class="fa-solid fa-pen-nib"></i>
+                Design
+              </div>
+              <div class="chip">
+                <i class="fa-solid fa-code"></i>
+                Coding
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media reveal">
+            <div class="media-card">
+              <!-- Placeholder “render” (290x290). Replace by setting src to your photo. -->
+              <img
+                class="ph-img avatar"
+                data-ph="true"
+                data-w="290"
+                data-h="290"
+                data-label="Profile Photo (290 × 290)"
+                src="images/profile.avif"
+                alt="Profile placeholder"
+              />
+              <div class="media-caption">
+                <i class="fa-solid fa-sparkles"></i>
+                <span>Profile render placeholder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="h2">About Me</h2>
+            <p class="muted">Get to Know Me</p>
+          </div>
+
+          <div class="two-col">
+            <div class="reveal">
+              <!-- 400x533 placeholder. Replace by setting src to your image. -->
+              <div class="frame">
+                <img
+                  class="ph-img"
+                  data-ph="true"
+                  data-w="400"
+                  data-h="533"
+                  data-label="About Image (400 × 533)"
+                  src="images/award1.png"
+                  alt="award 1"
+                />
+              </div>
+            </div>
+
+            <div class="about-card reveal">
+              <p>
+                Hi, I'm Aaron Shan. I enjoys taking on new challenges and working
+                with others. I love swimming, debate, and spending time with
+                friends. I'm always trying new activities, and I always enjoy
+                always doing something interesting and fun.
+              </p>
+
+              <p>
+                I believe in a more connected grade where everybody can help
+                each other and value each others opinions and values. As grade
+                10 rep, I want to people to be more connected in our grade, hold
+                fun events and activities, and hold fundraisers.
+              </p>
+
+              <div class="info-grid" role="list">
+                <div class="info" role="listitem">
+                  <span class="k">Name:</span>
+                  <span class="v">Aaron Shan</span>
+                </div>
+                <div class="info" role="listitem">
+                  <span class="k">Email:</span>
+                  <a class="v link" href="mailto:aaronshansh@gmail.com"
+                    >aaronshansh@gmail.com</a
+                  >
+                </div>
+                <div class="info" role="listitem">
+                  <span class="k">Location:</span>
+                  <span class="v">Burnaby, BC</span>
+                </div>
+                <div class="info" role="listitem">
+                  <span class="k">Availability:</span>
+                  <span class="v">Open to feedback</span>
+                </div>
+              </div>
+
+              <div class="inline-actions">
+                <a class="btn btn-ghost" href="#contact">
+                  <i class="fa-regular fa-message"></i>
+                  Get In Touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="h2">My Skills</h2>
+            <p class="muted">What I'm Capable Of</p>
+          </div>
+
+          <div class="cards three">
+            <article class="card reveal">
+              <div class="card-ico">
+                <i class="fa-solid fa-microphone-lines"></i>
+              </div>
+              <h3 class="h3">Debate &amp; Public Speaking</h3>
+              <p class="muted">
+                Over two years of debating experience, creating lasting
+                friendships and winning awards. Firm and clear voice, effective
+                in leading and representing. Recently joined the UBC Spring
+                Competition.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-ico">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <h3 class="h3">Digital Design &amp; Creation</h3>
+              <p class="muted">
+                Experience in video editing, poster creation, and website
+                design. Skills useful for creating engaging graphics, promoting
+                events, and establishing platforms like a Grade 10 website.
+                Determined to enable creativity and project sharing.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-ico">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <h3 class="h3">Communication &amp; Organization</h3>
+              <p class="muted">
+                Great communication (English &amp; Mandarin) and event planning
+                skills. Leadership experience from Intro Leadership 9, continuing
+                to Student Government in Grade 10. Excited to assist in community
+                building and making our community a better place.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESUME -->
+      <section class="section" id="resume">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="h2">Resume</h2>
+            <p class="muted">Key Skills &amp; Experiences</p>
+          </div>
+
+          <div class="timeline">
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-meta">
+                  <span class="pill">Since 2021</span>
+                  <h3 class="h3">Debate &amp; Public Speaking</h3>
+                  <p class="muted">Various Competitions / UBC Spring Competition</p>
+                </div>
+                <p class="muted">
+                  Over two years of debating experience, creating lasting
+                  friendships across British Columbia, and winning awards. I've
+                  also done public speaking. I have a firm and clear voice and
+                  am able to lead and represent Grade 10 students effectively.
+                  Most recently, I joined the UBC Spring Competition.
+                </p>
+              </div>
+            </div>
+
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-meta">
+                  <span class="pill">Since 2022</span>
+                  <h3 class="h3">Digital Design &amp; Creation (Web, Video, Posters)</h3>
+                  <p class="muted">Personal Projects / WIX Platform / Grade 10 Initiatives</p>
+                </div>
+                <p class="muted">
+                  Experience in video editing, poster creation, and website
+                  design. These skills are useful for creating engaging graphics,
+                  promoting events, and establishing platforms like a Grade 10
+                  website where all are properly informed and integrated.
+                  Determined to allow creativity to emerge and enable students to
+                  share their ideas and projects with ease.
+                </p>
+              </div>
+            </div>
+
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-meta">
+                  <span class="pill">Since 2023</span>
+                  <h3 class="h3">Python Programming</h3>
+                  <p class="muted">Self-Study / PyCharm</p>
+                </div>
+                <p class="muted">
+                  Learned fundamental concepts of Python including variables,
+                  loops, conditionals, and functions. Primarily using PyCharm for
+                  development.
+                </p>
+              </div>
+            </div>
+
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-meta">
+                  <span class="pill">Since 2023</span>
+                  <h3 class="h3">Communication &amp; Leadership</h3>
+                  <p class="muted">School Leadership Programs / Community Engagement</p>
+                </div>
+                <p class="muted">
+                  Great communication (English &amp; Mandarin) and event planning
+                  skills. My leadership experience includes Intro Leadership 9
+                  and continuing to Senior Leadership. Excited to assist in
+                  bringing people together and making our community a better
+                  place.
+                </p>
+              </div>
+            </div>
+
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-meta">
+                  <span class="pill">Since 2024</span>
+                  <h3 class="h3">Java &amp; AP Computer Science</h3>
+                  <p class="muted">High School Coursework</p>
+                </div>
+                <p class="muted">
+                  Currently enrolled in AP Computer Science, gaining skills in
+                  Java. This is enhancing my understanding of programming
+                  concepts and other coding languages.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="h2">Portfolio</h2>
+            <p class="muted">Goals as Grade 10 Rep</p>
+          </div>
+
+          <div class="cards three">
+            <article class="card project reveal">
+              <div class="frame frame-wide">
+                <img
+                  class="ph-img"
+                  data-ph="true"
+                  data-w="353"
+                  data-h="250"
+                  data-label="Project Image (353 × 250)"
+                  src="images/placeholder-leadership1.jpg"
+                  alt="Project placeholder"
+                />
+              </div>
+              <h3 class="h3">Grade 10 Communication Hub</h3>
+              <p class="muted">
+                Spearheaded the creation of a dedicated Grade 10 website for event
+                announcements, idea sharing, and showcasing student achievements.
+              </p>
+              <button
+                class="linkish"
+                data-modal="true"
+                data-title="Grade 10 Communication Hub"
+                data-body="I will create a special website just for the Grade 10 students. This website will act as a clearing house for the announcement of upcoming events, comments and opinions, idea generation for events, and showing monthly accomplishments such as art and fundraiser photos. The website will give an easy-to-read and accessible means for all the students to know our progress for the year. This keeps us in mind and remember our achievement."
+              >
+                View details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </article>
+
+            <article class="card project reveal">
+              <div class="frame frame-wide">
+                <img
+                  class="ph-img"
+                  data-ph="true"
+                  data-w="353"
+                  data-h="250"
+                  data-label="Project Image (353 × 250)"
+                  src="images/placeholder-leadership2.jpg"
+                  alt="Project placeholder"
+                />
+              </div>
+              <h3 class="h3">Student-Focused Fundraising</h3>
+              <p class="muted">
+                Championed a shift in fundraising efforts to directly support
+                students, providing assistance and academic bonuses.
+              </p>
+              <button
+                class="linkish"
+                data-modal="true"
+                data-title="Student-Focused Fundraising"
+                data-body="Being your Grade 10 representative, my top priority is to help all the students of our grade. Whether you are in trouble, need advice, or even medical expenses, I will do my best to be of help to you. I will work towards redirecting fundraisers towards the cause of assisting students with these types of needs, giving you academic bonuses for studies or academic purposes. (Money for achievements). This way, our efforts make a positive difference in your lives."
+              >
+                View details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </article>
+
+            <article class="card project reveal">
+              <div class="frame frame-wide">
+                <img
+                  class="ph-img"
+                  data-ph="true"
+                  data-w="353"
+                  data-h="250"
+                  data-label="Project Image (353 × 250)"
+                  src="images/placeholder-leadership3.jpg"
+                  alt="Project placeholder"
+                />
+              </div>
+              <h3 class="h3">Enhanced Feedback &amp; Engagement</h3>
+              <p class="muted">
+                Implemented an improved feedback system, including regular forums
+                and surveys, to ensure student voices are heard.
+              </p>
+              <button
+                class="linkish"
+                data-modal="true"
+                data-title="Enhanced Feedback &amp; Engagement"
+                data-body="I believe that each student should be heard. I want to see your experience from your view on the event or fundraisers. This way we in the government council can improve on what we do and learn from mistakes. I, as your Grade 10 rep, will make the feedback system better so that ideas and changes can make this big year better for all. Together, we can build a community where creativity and your voice is valued."
+              >
+                View details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- AWARDS TEASER -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="h2">Awards/Badges</h2>
+            <p class="muted">
+              Recognitions and achievements earned through dedication and
+              excellence in various competitions and activities. Click below to
+              explore the awards and badges received throughout my journey.
+            </p>
+          </div>
+
+          <div class="center reveal">
+            <a class="btn btn-primary" href="awards.html">
+              <i class="fa-solid fa-award"></i>
+              View Awards
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="h2">Contact</h2>
+            <p class="muted">Get In Touch</p>
+          </div>
+
+          <div class="cards two">
+            <article class="card reveal">
+              <div class="card-ico">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <h3 class="h3">Email Me</h3>
+              <p class="muted">
+                <a class="link" href="mailto:aaronshansh@gmail.com"
+                  >aaronshansh@gmail.com</a
+                >
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-ico">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <h3 class="h3">Location</h3>
+              <p class="muted">Burnaby, BC</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAL (reusable) -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-x" type="button" aria-label="Close" data-close="true">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 class="h3" id="modalTitle"></h3>
+        <p class="muted" id="modalBody"></p>
+      </div>
+    </div>
+
+    <button class="to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand-row">
+            <span class="brand-mark small"></span>
+            <span class="brand-text">Aaron Portfolio</span>
+          </div>
+          <p class="muted small">
+            © 2025 Aaron Shan. All Rights Reserved.
+          </p>
+        </div>
+
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#top">Home</a>
+          <a href="#about">About</a>
+          <a href="#resume">Resume</a>
+          <a href="#projects">Projects</a>
+          <a href="awards.html">Awards</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-social" aria-label="Social links">
+          <a class="icon-btn" href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a class="icon-btn" href="https://www.snapchat.com/" target="_blank" rel="noreferrer" aria-label="Snapchat">
+            <i class="fa-brands fa-snapchat"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
